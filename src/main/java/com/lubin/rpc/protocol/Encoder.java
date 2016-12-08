@@ -9,6 +9,9 @@ import io.netty.channel.ChannelOutboundHandlerAdapter;
 import io.netty.channel.ChannelPromise;
 
 
+/**
+ * 编码器
+ */
 public class Encoder extends ChannelOutboundHandlerAdapter {
 	
 	private static final ObjectMapper objectMapper = new ObjectMapper();

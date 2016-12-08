@@ -33,7 +33,7 @@ public class RPCClient {
 
 	EventLoopGroup eventLoopGroup;
 	
-	static RPCClient instane;;
+	static RPCClient instane;
 	public RPCClient(){
 	    conf = ConfigFactory.load();
 	    eventLoopGroup = new NioEventLoopGroup(conf.getInt("client.ioThreadNum"));
@@ -118,47 +118,6 @@ public class RPCClient {
             }
         }
 	}
-	
-//	public <T> IAsyncObjectProxy  createAsyncObjPrx(ArrayList<InetSocketAddress> serverList, Class<T> clazz) {
-//		return new ObjectProxy<T>(serverList, clazz);
-//	}
-//	
-//	public <T> IAsyncObjectProxy  createAsyncObjPrx(String host, int port, Class<T> clazz) {
-//		ArrayList<InetSocketAddress> serverList = new ArrayList<InetSocketAddress>();
-//		serverList.add(new InetSocketAddress(host, port));
-//		return new ObjectProxy<T>(serverList, clazz);
-//	}
-//	
-//	public <T> IAsyncObjectProxy  createAsyncObjPrx(Class<T> clazz) {
-//		return new ObjectProxy<T>(loadServerListFromConf(clazz), clazz);
-//	}
-//	
-//	public <T> IAsyncObjectProxy  createAsyncObjPrxFromZk(Class<T> clazz) {
-//        return new ObjectProxy<T>(clazz);
-//    }
-	
-	// 
-//  public <T> T createObjectProxy(String host, int port, Class<T> clazz){
-//      ArrayList<InetSocketAddress> serverList = new ArrayList<InetSocketAddress>();
-//      serverList.add(new InetSocketAddress(host, port));
-//      T t = (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[] { clazz }, new ObjectProxy<T>(serverList, clazz));
-//      return t;
-//  }
-//
-//  public <T> T  createObjectProxy(ArrayList<InetSocketAddress> serverList, Class<T> clazz) {
-//      T t = (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[] {clazz},new ObjectProxy<T>(serverList, clazz));
-//      return t;
-//  }
-//  
-//  public <T> T createObjectProxy(Class<T> clazz){
-//      T t = (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[] { clazz }, new ObjectProxy<T>(loadServerListFromConf(clazz), clazz));
-//      return t;
-//  }
-//
-//  public <T> T createObjectProxyFromZK(Class<T> clazz){
-//        T t = (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[] { clazz }, new ObjectProxy<T>(clazz));
-//        return t;
-//    }
 	
 	public <T> ArrayList<InetSocketAddress> loadServerListFromConf(Class<T> clazz){
 		ArrayList<InetSocketAddress> serverList = new ArrayList<InetSocketAddress>();
